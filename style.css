@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Miniver&family=Poppins:ital,wght@0,400;0,600;1,300;1,400;1,500;1,600&family=Sansita+Swashed:wght@300..900&family=Shadows+Into+Light&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    /* font-wieght */
+    --m-font:100;
+    --l-font:300;
+    --xl-font:600;
+}
+
+body{
+    color: black;
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom , blue  , white ) no-repeat center/cover;
+    background-attachment: fixed;
+    /* position: relative; */
+}
+.navbar{
+    color: wheat;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right  , green, black)1;
+}
+.navbar .project-log{
+    font-family: "Shadows Into Light", cursive;
+    font-weight: var(--xl-font);
+    letter-spacing: 2px;
+    text-shadow: 2px  7px  5px  black;
+}
+.navbar .list_item{
+    display: none;
+}
+.list_item .fa-bars{
+    display: flex;
+    transform: translateX(300%);
+    transition: transform 0.9s ease;
+}
+.list_item .fa-bars.active{
+    display: block;
+    transform: translateX(0);
+}
+
+.navbar .nav{
+    font-family:"Poppins",ital;
+    font-weight: var(--l-font);
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.navbar .nav li:hover{
+
+    color: black;
+    font-weight: var(--xl-font);
+    cursor: pointer;
+}
+/* vertical nav */
+.nav-ver{
+    padding-top: 4rem;
+    width: 10rem;
+    height: 100vh;
+    color: wheat;
+    background: rgba(0 , 0 , 0 ,30%) ;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    right: 0;    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.9s ease;    
+}
+.navbar .list_item .fa-bars:hover{
+    color: aqua;
+}
+.nav-ver .fa-x:hover{
+    color: aqua;
+}
+.nav-ver.active{
+    display: flex;
+    transform: translateX(0);
+
+}
+.nav-ver .close{
+    position: absolute;
+    top:15px;
+    right: 30px;
+}
+.nav-ver ul{
+    list-style: none;
+}
+.nav-ver ul li{
+    margin-bottom: 20px;
+}
+.nav-ver ul li:hover{
+    color:black
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    display: inline-block;
+    font-weight:600;
+    font-size:xx-large;
+    color: black;
+    border-bottom: 5px solid blue;
+    margin-bottom:2rem ;
+}
+
+
+/* home section */
+#home{
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 4rem;
+    height: auto;
+    width:auto;
+    color: black;
+    /* display: flex; */
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 4rem;
+}
+.container .contant{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.contant h1 span{
+    color: blue;
+    -webkit-text-stroke:1px red ;
+}
+.container img{
+    display: flex;
+    border-radius: 50%;
+    height: auto;
+    width: 100%;
+    max-width: 25rem;
+    /* flex: 1 1 12rem; */
+    /* max-width: 40rem; */
+}
+
+.contant .bottons{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.contant .bottons .btn-contact,
+.contant .bottons .btn-about-us:hover{
+    background: blue;
+    color:white;
+    padding: 2px 5px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+    /* margin-right: 20px; */
+}
+.bottons .btn-contact:hover,
+.contant .bottons .btn-about-us{
+    padding: 2px 5px;
+    border-radius: 10px;
+    background: none;
+    color:blue
+}
+
+
+
+/*  about section */
+.about{
+    color: black;
+    padding: 0px 30px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* background: red; */
+
+}
+.about .about-container{
+    width: 100%;
+    max-width: 80%;
+}
+.about .group{
+    /* background: green; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 80%;
+    overflow-x: auto;
+}
+.group::-webkit-scrollbar{
+    display: none;
+}
+.group:hover .items{
+    animation-play-state: paused;
+}
+.about .items{
+    /* background:blue; */
+    padding: 5px;
+    margin-top: 2rem;
+    width: max-content;
+    display: flex;
+    gap: 2rem;
+    padding-right: 20px;
+    animation: go 8s linear infinite;
+}
+
+.about .items .item{
+    flex: 0 0 15rem;
+    border-radius: 20px;
+    height: 20rem;
+    background: none no-repeat center/cover;
+}
+.about .items .item:hover .content{
+    display: flex;
+    background: rgba(0 , 0 , 0, 30% );
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+
+}
+.item .content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    display: none;
+}
+.item .content h1{
+    color: blac;
+}
+.item .content button{
+    background: blue;
+    color:white;
+    font-weight: var(--xl-font);
+    font-size: larger;
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+.item .content button:hover{
+    background: none;
+    color: blue;
+}
+
+
+
+
+/* services section */
+#services{
+    padding: 20px;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.serv-items{
+    width: 80%;
+    flex-wrap: wrap;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.serv-items .item{
+    padding: 10px;
+    background: rgba(0 , 0 , 0 ,30%);
+    width: 15rem;
+    height: 20rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease;
+    
+}
+.serv-items .item:hover{
+    transform: scale(1.1);
+}
+
+.serv-items .item i{
+    padding-top: 20px;
+    font-size: 3rem;
+}
+.serv-items .item p{
+    color: white;
+    letter-spacing: 1px;
+}
+
+
+/* booking section */
+.booking{
+    padding: 20px;
+    margin-top: 5rem;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.booking .book-container{
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.booking .book-container .content{
+    padding: 50px 5px;
+    border-radius: 20px;
+    width: 70%;
+    min-width:12rem;
+    border-radius: 20px;
+    background: blue;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-container .content .name{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    min-width: 30%;
+    position: relative;
+}
+
+
+.book-container .content .name label{
+    position: absolute;
+    left: 10px;
+    top: 0;
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.83s;
+}
+.book-container .content .name input,
+.phone input{
+    border-radius: 20px;
+    padding: 5px 20px;
+    outline: none;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+/* .name input:focus +label, */
+.phone input:not(:placeholder-shown)+label,
+.name input:not(:placeholder-shown) + label{
+    top: -25px !important;
+    opacity: 1 !important;
+    color: white;
+
+}
+.phone{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    min-width: 30%;
+    position: relative;
+}
+/* .phone input{
+    outline: none;
+    width: 100%;
+    height: 25px;
+    padding: 10px 10px;
+} */
+.phone label{
+    left: 10px;
+    top: 0;
+    color: white;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.83s;
+}
+.content button{
+    background: blue;
+    color:white;
+    font-weight: var(--xl-font);
+    font-size: larger;
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+
+.content button:hover{
+    background: white;
+    color: blue;
+}
+.book-container textarea{
+    width: 100%;
+    max-width: 70%;
+    outline: none;
+    padding: 10px;
+    resize: none;
+    border-radius: 20px;
+    height: 4rem;
+}
+
+@media(max-width:800px){
+    .navbar .list_item{
+        display: flex;
+    }
+    .navbar .nav{
+        display: none;
+    }
+    .navbar{
+        justify-content: space-between;
+        padding: 0px 30px;
+    }
+    .booking .book-container{
+        width: 100%;
+    }
+    .booking .book-container .content{
+        width: 100%;
+    }
+}
+@keyframes go {
+    from{
+        translate: 0;
+    }
+    to{
+        translate: -100%;
+    }
+};
